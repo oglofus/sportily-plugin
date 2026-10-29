@@ -11,6 +11,17 @@
 	"homepage": "https://sportily.app/mcp-connect",
 	"repository": "https://github.com/oglofus/sportily-plugin",
 	"license": "MIT",
-	"keywords": ["sports", "horse-racing", "tennis", "football", "nba", "analytics", "research"],
-	"privacyPolicyUrl": "https://sportily.app/privacy-policy"
+	"keywords": [
+		"sports",
+		"horse-racing",
+		"tennis",
+		"football",
+		"nba",
+		"analytics",
+		"research"
+	],
+	"privacyPolicyUrl": "https://sportily.app/privacy-policy",
+	"supportUrl": "https://sportily.app/contact-us",
+	"termsOfServiceUrl": "https://sportily.app/terms-conditions",
+	"documentationUrl": "https://sportily.app/mcp-connect"
 }
