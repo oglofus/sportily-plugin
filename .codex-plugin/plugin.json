@@ -1,0 +1,87 @@
+{
+	"name": "app-6a2196f058f481918cfc08212d697532",
+	"version": "3.1.1",
+	"description": "Horse racing, tennis, football and NBA research, Lenses, and personal tracking with Sportily.",
+	"author": {
+		"name": "Oglofus",
+		"email": "info@sportily.app",
+		"url": "https://sportily.app"
+	},
+	"homepage": "https://sportily.app/mcp-connect",
+	"skills": "./skills/",
+	"mcpServers": "./.mcp.json",
+	"interface": {
+		"displayName": "Sportily",
+		"shortDescription": "Four-sport research and picks",
+		"longDescription": "Research horse racing, ATP/WTA tennis, football and NBA basketball with Sportily. Explore schedules, results, player and team profiles, model signals and stored market evidence. Inspect racing filters and historical backtests, and manage tennis, football and NBA Lenses and personal picks when requested. Includes sport-specific research and tracking workflows. Sign in to Sportily to access your account’s sports data and tracking tools. Coverage, capture times and publication timing vary; stored sports data is not a live feed. Sportily provides analytics and tracking; it does not place bets or guarantee outcomes.",
+		"developerName": "Oglofus",
+		"category": "Entertainment",
+		"capabilities": ["Read", "Write"],
+		"websiteURL": "https://sportily.app",
+		"supportURL": "https://sportily.app/contact-us",
+		"privacyPolicyURL": "https://sportily.app/privacy-policy",
+		"termsOfServiceURL": "https://sportily.app/terms-conditions",
+		"defaultPrompt": [
+			"Review today's horse racing cards and my saved Race Lenses.",
+			"Review today's tennis and football matchups using stored research.",
+			"Show NBA games, standings and my tracked picks."
+		],
+		"brandColor": "#163426",
+		"composerIcon": "./assets/logo.png",
+		"logo": "./assets/logo.png"
+	},
+	"extensions": {
+		"com.openai": {
+			"review": {
+				"test_cases": {
+					"positive": [
+						{
+							"description": "List stored horse races for a date.",
+							"prompt": "What horse races does Sportily have today in Great Britain and Ireland?",
+							"tools_triggered": "find_races",
+							"expected_behavior": "Returns today's stored Sportily races with race ids, courses, off times and links. If no races are stored for the date, says so instead of inventing a card."
+						},
+						{
+							"description": "Discover stored tennis matches.",
+							"prompt": "Show me Sportily tennis matches today.",
+							"tools_triggered": "find_tennis_matches",
+							"expected_behavior": "Returns stored ATP/WTA match ids, players, tournaments and start times for today, subject to account access. Explains empty coverage and does not invent live scores."
+						},
+						{
+							"description": "Discover stored football fixtures.",
+							"prompt": "Show me Sportily football matches for today and tomorrow.",
+							"tools_triggered": "find_football_matches",
+							"expected_behavior": "Returns stored fixture ids, teams, competitions and kickoff times for the two UK calendar days. Does not claim live availability or create any private record."
+						},
+						{
+							"description": "Discover stored NBA games.",
+							"prompt": "Which NBA games does Sportily have for tonight?",
+							"tools_triggered": "find_basketball_games",
+							"expected_behavior": "Returns stored game ids, teams and tip-off times for the America/New_York calendar date, with coverage notes. Forecasts are labelled experimental."
+						},
+						{
+							"description": "Read NBA standings computed from stored games.",
+							"prompt": "Show the NBA standings from Sportily.",
+							"tools_triggered": "get_basketball_standings",
+							"expected_behavior": "Returns East and West standings computed from stored completed games, with the season and coverage. Does not present them as the official live table."
+						}
+					],
+					"negative": [
+						{
+							"description": "Unrelated calendar request.",
+							"prompt": "What meetings do I have tomorrow afternoon?"
+						},
+						{
+							"description": "Favourable comment is not a request to save a racing pick.",
+							"prompt": "That horse looks good, thanks."
+						},
+						{
+							"description": "Approval of research is not consent to save or track a football Lens.",
+							"prompt": "That football Lens looks useful."
+						}
+					]
+				}
+			}
+		}
+	}
+}

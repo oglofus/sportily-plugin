@@ -1,0 +1,16 @@
+{
+	"name": "sportily",
+	"displayName": "Sportily",
+	"version": "1.0.0",
+	"description": "Research horse racing, ATP/WTA tennis, football and NBA basketball with Sportily: race cards, fixtures, results, player and team profiles, model signals and Lenses, plus your private picks tracker.",
+	"author": {
+		"name": "Oglofus",
+		"email": "info@sportily.app",
+		"url": "https://sportily.app"
+	},
+	"homepage": "https://sportily.app/mcp-connect",
+	"repository": "https://github.com/oglofus/sportily-plugin",
+	"license": "MIT",
+	"keywords": ["sports", "horse-racing", "tennis", "football", "nba", "analytics", "research"],
+	"privacyPolicyUrl": "https://sportily.app/privacy-policy"
+}

@@ -1,0 +1,14 @@
+{
+	"name": "oglofus",
+	"description": "Sportily sports research plugins from Oglofus.",
+	"owner": {
+		"name": "Oglofus",
+		"email": "info@sportily.app"
+	},
+	"plugins": [
+		{
+			"name": "sportily",
+			"source": "./"
+		}
+	]
+}

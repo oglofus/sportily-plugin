@@ -1,0 +1,8 @@
+{
+	"mcpServers": {
+		"sportily": {
+			"type": "http",
+			"url": "https://sportily.app/mcp"
+		}
+	}
+}
